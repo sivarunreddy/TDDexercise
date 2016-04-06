@@ -75,7 +75,7 @@ public class NumberToWordsConverter {
 	private int getDividerIndex(int index,Long number){
 		int divider = dividers[index];
 		while (index>=0) {
-			if(number <= divider){
+			if(number < divider){
 				index--;
 				divider = dividers[index];
 			}else{
