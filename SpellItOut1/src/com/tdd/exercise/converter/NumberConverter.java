@@ -1,5 +1,7 @@
 package com.tdd.exercise.converter;
 
+import com.tdd.exercise.exception.NumberRangeNotSupportedException;
+
 public class NumberConverter {
 	private Double number;
 	private static final String UNITS[] = new String[] { "Zero", "One", "Two",
@@ -14,8 +16,11 @@ public class NumberConverter {
 		this.number = number;
 	}
 
-	public String convertToWords() {
+	public String convertToWords() throws NumberRangeNotSupportedException {
 		Long wholeNumber = number.longValue();
+		if(number>99999){
+			throw new NumberRangeNotSupportedException("Number rang not supported. Max number is - 99999");
+		}
 		NumberToWordsConverter converter=new ThousandsConverter();
 		return converter.convert(wholeNumber);
 		

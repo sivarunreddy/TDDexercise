@@ -1,9 +1,11 @@
 package com.tdd.exercise.converter;
 
 import static org.hamcrest.CoreMatchers.is;
-import static org.junit.Assert.assertThat;
+import static org.junit.Assert.*;
 
 import org.junit.Test;
+
+import com.tdd.exercise.exception.NumberRangeNotSupportedException;
 
 public class NumberConverterTest {
 	@Test
@@ -222,5 +224,10 @@ public class NumberConverterTest {
 	public void test_convert99999toWords() throws Exception {
 		String numberName = new NumberConverter(new Double(99999)).convertToWords();
 		assertThat(numberName, is("Ninety Nine Thousand Nine Hundred Ninety Nine"));
+	}
+	
+	@Test(expected=NumberRangeNotSupportedException.class)
+	public void test_Exception_for_above_99999_value() throws Exception {
+		new NumberConverter(new Double(100000)).convertToWords();
 	}
 }
