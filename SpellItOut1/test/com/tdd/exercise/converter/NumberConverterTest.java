@@ -24,5 +24,11 @@ public class NumberConverterTest {
 		assertThat(digit, is("Nine"));
 	}
 	
+	@Test
+	public void test_convert10AsTen() throws Exception {
+		String digit = new NumberConverter(new Double(10)).convertToWords();
+		assertThat(digit, is("Ten"));
+	}
+	
 
 }
