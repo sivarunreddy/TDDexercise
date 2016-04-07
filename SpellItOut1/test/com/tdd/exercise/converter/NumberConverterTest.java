@@ -145,5 +145,82 @@ public class NumberConverterTest {
 		String numberName = new NumberConverter(new Double(999)).convertToWords();
 		assertThat(numberName, is("Nine Hundred Ninety Nine"));
 	}
-
+	
+	@Test
+	public void test_convert1000toWords() throws Exception {
+		String numberName = new NumberConverter(new Double(1000)).convertToWords();
+		assertThat(numberName, is("One Thousand"));
+	}
+	
+	@Test
+	public void test_convert1001toWords() throws Exception {
+		String numberName = new NumberConverter(new Double(1001)).convertToWords();
+		assertThat(numberName, is("One Thousand One"));
+	}
+	
+	@Test
+	public void test_convert1010toWords() throws Exception {
+		String numberName = new NumberConverter(new Double(1010)).convertToWords();
+		assertThat(numberName, is("One Thousand Ten"));
+	}
+	
+	@Test
+	public void test_convert1011toWords() throws Exception {
+		String numberName = new NumberConverter(new Double(1011)).convertToWords();
+		assertThat(numberName, is("One Thousand Eleven"));
+	}
+	
+	@Test
+	public void test_convert1020toWords() throws Exception {
+		String numberName = new NumberConverter(new Double(1020)).convertToWords();
+		assertThat(numberName, is("One Thousand Twenty"));
+	}
+	
+	@Test
+	public void test_convert1099toWords() throws Exception {
+		String numberName = new NumberConverter(new Double(1099)).convertToWords();
+		assertThat(numberName, is("One Thousand Ninety Nine"));
+	}
+	
+	@Test
+	public void test_convert1100toWords() throws Exception {
+		String numberName = new NumberConverter(new Double(1100)).convertToWords();
+		assertThat(numberName, is("One Thousand One Hundred"));
+	}
+	
+	@Test
+	public void test_convert1999toWords() throws Exception {
+		String numberName = new NumberConverter(new Double(1999)).convertToWords();
+		assertThat(numberName, is("One Thousand Nine Hundred Ninety Nine"));
+	}
+	
+	@Test
+	public void test_convert10000toWords() throws Exception {
+		String numberName = new NumberConverter(new Double(10000)).convertToWords();
+		assertThat(numberName, is("Ten Thousand"));
+	}
+	
+	@Test
+	public void test_convert10001toWords() throws Exception {
+		String numberName = new NumberConverter(new Double(10001)).convertToWords();
+		assertThat(numberName, is("Ten Thousand One"));
+	}
+	
+	@Test
+	public void test_convert10100toWords() throws Exception {
+		String numberName = new NumberConverter(new Double(10100)).convertToWords();
+		assertThat(numberName, is("Ten Thousand One Hundred"));
+	}
+	
+	@Test
+	public void test_convert11000toWords() throws Exception {
+		String numberName = new NumberConverter(new Double(11000)).convertToWords();
+		assertThat(numberName, is("Eleven Thousand"));
+	}
+	
+	@Test
+	public void test_convert99999toWords() throws Exception {
+		String numberName = new NumberConverter(new Double(99999)).convertToWords();
+		assertThat(numberName, is("Ninety Nine Thousand Nine Hundred Ninety Nine"));
+	}
 }

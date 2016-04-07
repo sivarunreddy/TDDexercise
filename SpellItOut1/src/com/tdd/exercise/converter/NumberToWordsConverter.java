@@ -13,18 +13,7 @@ public abstract class  NumberToWordsConverter {
 	
 	protected int divider;
 	
-	public String convert(Long number){
-		String numberName="";
-		if(isRightConverter(number)){
-			numberName=getNumberName(number/divider)+" "+DENOMINATORS[0];
-		}else{
-			return nextConverter.convert(number%divider);
-		}
-		if(hasMoreDigits(number)){
-			numberName=numberName+" "+nextConverter.convert(number%divider);
-		}
-		return numberName;
-	}
+	public abstract String convert(Long number);
 
 	public String getUnitName(Long number) {
 		return UNITS[number.intValue()];

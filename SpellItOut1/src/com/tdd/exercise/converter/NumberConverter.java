@@ -16,7 +16,7 @@ public class NumberConverter {
 
 	public String convertToWords() {
 		Long wholeNumber = number.longValue();
-		NumberToWordsConverter converter=new HundredsConverter();
+		NumberToWordsConverter converter=new ThousandsConverter();
 		return converter.convert(wholeNumber);
 		
 	}
