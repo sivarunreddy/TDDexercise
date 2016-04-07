@@ -17,7 +17,7 @@ public class NumberConverter {
 	}
 
 	public String convertToWords() throws NumberRangeNotSupportedException {
-		Long wholeNumber = number.longValue();
+		Long wholeNumber = Math.round(number);
 		if(number>99999){
 			throw new NumberRangeNotSupportedException("Number rang not supported. Max number is - 99999");
 		}

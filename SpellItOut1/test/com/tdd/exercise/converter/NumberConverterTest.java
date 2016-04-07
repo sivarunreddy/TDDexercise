@@ -230,4 +230,16 @@ public class NumberConverterTest {
 	public void test_Exception_for_above_99999_value() throws Exception {
 		new NumberConverter(new Double(100000)).convertToWords();
 	}
+	
+	@Test
+	public void test_Convert_without_round_the_value() throws Exception {
+		String numberName = new NumberConverter(new Double(10.25)).convertToWords();
+		assertThat(numberName, is("Ten"));
+	}
+	
+	@Test
+	public void test_Convert_with_round_the_value() throws Exception {
+		String numberName = new NumberConverter(new Double(10.65)).convertToWords();
+		assertThat(numberName, is("Eleven"));
+	}
 }
