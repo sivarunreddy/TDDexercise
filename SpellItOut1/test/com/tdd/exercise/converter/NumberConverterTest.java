@@ -8,10 +8,21 @@ import org.junit.Test;
 public class NumberConverterTest {
 	@Test
 	public void test_convert1AsOne() throws Exception {
-		String one = new NumberConverter(new Double(1)).convertToWords();
-		assertThat(one, is("One"));
+		String digit = new NumberConverter(new Double(1)).convertToWords();
+		assertThat(digit, is("One"));
 	}
 	
+	@Test
+	public void test_convert2AsTwo() throws Exception {
+		String digit = new NumberConverter(new Double(2)).convertToWords();
+		assertThat(digit, is("Two"));
+	}
+	
+	@Test
+	public void test_convert9AsNine() throws Exception {
+		String digit = new NumberConverter(new Double(9)).convertToWords();
+		assertThat(digit, is("Nine"));
+	}
 	
 
 }
