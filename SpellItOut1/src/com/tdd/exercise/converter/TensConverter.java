@@ -4,7 +4,6 @@ public class TensConverter extends NumberToWordsConverter{
 
 	public TensConverter(){
 		divider=10;
-		nextConverter=new UnitConverter();
 	}
 
 	@Override
