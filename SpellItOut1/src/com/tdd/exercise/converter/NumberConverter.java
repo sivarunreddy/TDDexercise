@@ -16,25 +16,9 @@ public class NumberConverter {
 
 	public String convertToWords() {
 		Long wholeNumber = number.longValue();
-		if (number < 10) {
-			return getUnitName(wholeNumber);
-		} else if(number<20){
-			return getTeenName(wholeNumber);
-		}else 
-			return getTenName(wholeNumber)+(wholeNumber%10==0?"":" "+getUnitName(wholeNumber%10));
+		NumberToWordsConverter converter=new HundredsConverter();
+		return converter.convert(wholeNumber);
 		
-	}
-
-	private String getUnitName(Long number) {
-		return UNITS[number.intValue()];
-	}
-
-	private String getTeenName(Long number) {
-		return TEENS[number.intValue() % 10];
-	}
-	
-	private String getTenName(Long number){
-		return TENS[(number.intValue()/10)-2];
 	}
 
 }
