@@ -30,5 +30,22 @@ public class NumberConverterTest {
 		assertThat(digit, is("Ten"));
 	}
 	
+	@Test
+	public void test_convert11AsElevan() throws Exception {
+		String digit = new NumberConverter(new Double(11)).convertToWords();
+		assertThat(digit, is("Eleven"));
+	}
+	
+	@Test
+	public void test_convert15AsFifteen() throws Exception {
+		String digit = new NumberConverter(new Double(15)).convertToWords();
+		assertThat(digit, is("Fifteen"));
+	}
+	
+	@Test
+	public void test_convert19AsNineteen() throws Exception {
+		String digit = new NumberConverter(new Double(19)).convertToWords();
+		assertThat(digit, is("Nineteen"));
+	}
 
 }
