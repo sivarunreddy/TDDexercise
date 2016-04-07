@@ -1,5 +1,6 @@
 package com.tdd.exercise.converter;
 
+import com.tdd.exercise.exception.NagativeValuesNotSupported;
 import com.tdd.exercise.exception.NumberRangeNotSupportedException;
 
 public class NumberConverter {
@@ -16,10 +17,14 @@ public class NumberConverter {
 		this.number = number;
 	}
 
-	public String convertToWords() throws NumberRangeNotSupportedException {
+	public String convertToWords() throws NumberRangeNotSupportedException, NagativeValuesNotSupported {
 		Long wholeNumber = Math.round(number);
 		if(number>99999){
 			throw new NumberRangeNotSupportedException("Number rang not supported. Max number is - 99999");
+		}
+		
+		if(wholeNumber<0){
+			throw new NagativeValuesNotSupported();
 		}
 		NumberToWordsConverter converter=new ThousandsConverter();
 		return converter.convert(wholeNumber);

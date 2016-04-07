@@ -5,9 +5,11 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
+import com.tdd.exercise.exception.NagativeValuesNotSupported;
 import com.tdd.exercise.exception.NumberRangeNotSupportedException;
 
 public class NumberConverterTest {
+	
 	@Test
 	public void test_convert1AsOne() throws Exception {
 		String numberName = new NumberConverter(new Double(1)).convertToWords();
@@ -241,5 +243,10 @@ public class NumberConverterTest {
 	public void test_Convert_with_round_the_value() throws Exception {
 		String numberName = new NumberConverter(new Double(10.65)).convertToWords();
 		assertThat(numberName, is("Eleven"));
+	}
+	
+	@Test(expected=NagativeValuesNotSupported.class)
+	public void test_Exception_for_nagative_value() throws Exception {
+		new NumberConverter(new Double(-10)).convertToWords();
 	}
 }
