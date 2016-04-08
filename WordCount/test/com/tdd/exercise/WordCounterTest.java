@@ -48,4 +48,13 @@ public class WordCounterTest {
 		wordMap.put("driven", 1);
 		assertThat(new WordCounter(text).getUniqueWordsCount(), is(equalTo(wordMap)));
 	}
+	
+	@Test
+	public void test_words_count_with_external_delimiter() {
+		String text="test,driven,test";
+		Map<String,Integer> wordMap=new HashMap<>();
+		wordMap.put("test", 2);
+		wordMap.put("driven", 1);
+		assertThat(new WordCounter(text,",").getUniqueWordsCount(), is(equalTo(wordMap)));
+	}
 }
