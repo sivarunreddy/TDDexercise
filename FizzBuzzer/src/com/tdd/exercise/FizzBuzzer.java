@@ -6,7 +6,11 @@ public class FizzBuzzer {
 		checkForIllegalArguments(number);
 		String fizzBuzzerString[]=new String[number];
 		for(int i=1;i<=number;i++){
-			fizzBuzzerString[i-1]=Integer.toString(i);
+			String value=Integer.toString(i);
+			if(i%3==0){
+				value="Fizz";
+			}
+			fizzBuzzerString[i-1]=value;
 		}
 		return fizzBuzzerString;
 	}
