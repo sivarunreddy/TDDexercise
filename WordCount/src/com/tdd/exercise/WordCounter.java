@@ -31,8 +31,8 @@ public class WordCounter {
 			return wordMap;
 		
 		Arrays.stream(text.split(delimiter)).forEach(word -> {
-			Integer counter = wordMap.getOrDefault(word,0);
-			wordMap.put(word, ++counter);
+			Integer counter = wordMap.getOrDefault(word.toLowerCase(),0);
+			wordMap.put(word.toLowerCase(), ++counter);
 		});
 
 		return wordMap;
