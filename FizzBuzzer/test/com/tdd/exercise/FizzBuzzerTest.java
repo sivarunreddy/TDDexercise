@@ -40,4 +40,9 @@ public class FizzBuzzerTest {
 		assertThat(fizzBuzzer.getFizzBuzzer(3),is(equalTo(new String[]{"1","2","Fizz"})));
 	}
 	
+	@Test
+	public void test_five_with_fizzbuzzer_should_return_one_to_two_string_and_three_as_fizz_and_five_as_buzz(){
+		assertThat(fizzBuzzer.getFizzBuzzer(5),is(equalTo(new String[]{"1","2","Fizz","4","Buzz"})));
+	}
+	
 }
