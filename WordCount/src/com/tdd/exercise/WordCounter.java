@@ -19,6 +19,10 @@ public class WordCounter {
 
 	private Map<String, Integer> getWordsFrequency(String text) {
 		Map<String, Integer> wordMap = new HashMap<>();
+		
+		if (null == text || text.isEmpty())
+			return wordMap;
+		
 		Arrays.stream(text.split(DEFAULT_DELIMITOR)).forEach(word -> {
 			Integer counter = wordMap.get(word);
 			wordMap.put(word, counter == null ? 1 : ++counter);
