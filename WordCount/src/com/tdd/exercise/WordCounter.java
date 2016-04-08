@@ -24,8 +24,8 @@ public class WordCounter {
 			return wordMap;
 		
 		Arrays.stream(text.split(DEFAULT_DELIMITOR)).forEach(word -> {
-			Integer counter = wordMap.get(word);
-			wordMap.put(word, counter == null ? 1 : ++counter);
+			Integer counter = wordMap.getOrDefault(word,0);
+			wordMap.put(word, ++counter);
 		});
 
 		return wordMap;
