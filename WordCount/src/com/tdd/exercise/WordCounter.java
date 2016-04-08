@@ -17,7 +17,12 @@ public class WordCounter {
 		if(!text.isEmpty()){
 			String[] words=text.split(DEFAULT_DELIMITOR);
 			for(String word:words){
-				wordMap.put(word, 1);
+				Integer counter=wordMap.get(word);
+				if(null==counter)
+					counter=1;
+				else
+					counter++;
+				wordMap.put(word, counter);
 			}
 		}
 			
