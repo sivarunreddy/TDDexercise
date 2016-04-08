@@ -20,4 +20,8 @@ public class FizzBuzzerTest {
 		
 	}
 
+	@Test
+	public void test_two_with_fizzbuzzer_should_return_one_to_two_string(){
+		assertThat(fizzBuzzer.getFizzBuzzer(2),is(equalTo(new String[]{"1","2"})));
+	}
 }
