@@ -39,4 +39,13 @@ public class WordCounterTest {
 		wordMap.put("TDD", 2);
 		assertThat(new WordCounter(text).getUniqueWordsCount(), is(equalTo(wordMap)));
 	}
+	
+	@Test
+	public void test_three_words_with_two_words_as_same_should_return_two_words_with_counters() {
+		String text="test driven test";
+		Map<String,Integer> wordMap=new HashMap<>();
+		wordMap.put("test", 2);
+		wordMap.put("driven", 1);
+		assertThat(new WordCounter(text).getUniqueWordsCount(), is(equalTo(wordMap)));
+	}
 }
