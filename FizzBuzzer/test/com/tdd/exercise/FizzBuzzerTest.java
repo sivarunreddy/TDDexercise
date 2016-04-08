@@ -45,4 +45,9 @@ public class FizzBuzzerTest {
 		assertThat(fizzBuzzer.getFizzBuzzer(5),is(equalTo(new String[]{"1","2","Fizz","4","Buzz"})));
 	}
 	
+	@Test
+	public void test_fifteen_with_fizzbuzzer_should_return_three_six_nine_fourteen_as_fizz_five_as_buzz_and_fifteen_as_fizzbuzz(){
+		assertThat(fizzBuzzer.getFizzBuzzer(15),is(equalTo(new String[]{"1","2","Fizz","4","Buzz","Fizz","7","8","Fizz","Buzz","11","Fizz","13","14","FizzBuzz"})));
+	}
+	
 }

@@ -18,16 +18,16 @@ public class FizzBuzzer {
 	}
 	
 	private String getNumberAsString(int number){
-		String value=Integer.toString(number);
-		
+		StringBuilder sBuilder=new StringBuilder();
 		if(number%3==0){
-			value="Fizz";
+			sBuilder.append("Fizz");
 		}
 		
 		if(number%5==0){
-			value="Buzz";
+			sBuilder.append("Buzz");
 		}
-		return value;
+		
+		return sBuilder.length()>0?sBuilder.toString():Integer.toString(number);
 	}
 
 }
