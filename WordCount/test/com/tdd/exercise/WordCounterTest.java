@@ -20,7 +20,15 @@ public class WordCounterTest {
 		String text="TDD";
 		Map<String,Integer> wordMap=new HashMap<>();
 		wordMap.put("TDD", 1);
-		assertThat(new WordCounter(text).getUniqueWordsCount(), is(equalTo(wordMap)));
+		
 	}
 	
+	@Test
+	public void test_two_word_string() {
+		String text="TDD is";
+		Map<String,Integer> wordMap=new HashMap<>();
+		wordMap.put("TDD", 1);
+		wordMap.put("is", 1);
+		assertThat(new WordCounter(text).getUniqueWordsCount(), is(equalTo(wordMap)));
+	}
 }
