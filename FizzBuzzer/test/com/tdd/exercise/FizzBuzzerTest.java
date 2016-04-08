@@ -24,4 +24,15 @@ public class FizzBuzzerTest {
 	public void test_two_with_fizzbuzzer_should_return_one_to_two_string(){
 		assertThat(fizzBuzzer.getFizzBuzzer(2),is(equalTo(new String[]{"1","2"})));
 	}
+	
+	@Test(expected=IllegalArgumentException.class)
+	public void test_zero_with_fizzbuzzer_should_throw_exception(){
+		fizzBuzzer.getFizzBuzzer(0);
+	}
+	
+	@Test(expected=IllegalArgumentException.class)
+	public void test_negative_value_with_fizzbuzzer_should_throw_exception(){
+		fizzBuzzer.getFizzBuzzer(-1);
+	}
+	
 }
